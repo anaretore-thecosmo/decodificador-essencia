@@ -1,5 +1,5 @@
 ---
-name: decodificador-numerologico
+name: decodificador-essencia
 description: Análise numerológica completa em sete sistemas (Pitagórico, Cabalístico, Caldeu, Védico, Tântrico, Chinês, Cósmico) com síntese integrativa. Use esta skill sempre que a conversa mencionar numerologia, decodificação por números, leitura de nome e data de nascimento, análise de caminho de vida, ou quando alguém pedir leitura simbólica a partir de nome completo e data. Use também para sinastria numerológica (dois nomes), numerologia de marca, ano pessoal, leitura focada em prosperidade ou em sombra, e quando os comandos /godmode, /ghost ou /OODA aparecerem com nome e data. Não use para horóscopo ou astrologia pura, embora possa cruzar com astrologia básica como camada opcional.
 metadata:
   author: Ana Retore
