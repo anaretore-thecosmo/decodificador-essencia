@@ -151,6 +151,30 @@ A síntese integrativa do relatório deve seguir esta estrutura:
 
 A síntese não é resumo. É integração. Deve trazer leitura nova que emerge do cruzamento, não apenas repetir o que já foi dito nos sistemas separados.
 
+## Exemplo concreto de síntese
+
+Use como referência de densidade e estrutura esperadas.
+
+**Dados do exemplo:**
+Convergências: 6 (6 ocorrências), 1 (5 ocorrências), 4 (3 ocorrências). Kármico: 14 (dia). Mestre: 22 em palavra do nome (Cabalístico). Signo chinês: Cavalo de Terra Yang. CV pitagórico: 4.
+
+**Convergências identificadas:**
+O 6 domina em 6 pontos (Expressão pitagórica, Alma pitagórica, Naam Ank védico, Dom tântrico, Cristal cósmico, Caldeu destino). O 1 em 5 pontos (Maturidade, Cabalístico, Caldeu personalidade, Karma e Vida Passada tântricos). O 4 em 3 pontos (CV, Bhagyank védico, Caminho tântrico).
+
+**Combinações de eixos:**
+Dupla central: 6 + 4 — estrutura que tece. Pessoa que organiza o cuidado, arquiteta sistemas amorosos. O 1 como corrente de fundo: autoria que serve, não que protagoniza.
+
+**Mestre 22:**
+Herança vibracional de linhagem construtora. Capacidade de materialização instalada antes de qualquer escolha consciente.
+
+**Kármico 14:**
+A lição da disciplina dentro da liberdade atravessa o mapa inteiro: o 4 estrutural pede método, o kármico 14 pede que o método seja escolhido, não imposto. O Cavalo de Terra confirma o paradoxo — signo de movimento que nasceu em ano de raiz.
+
+**Retrato:**
+Pessoa que veio para construir o que cuida. Não como serviço disperso, mas como sistema que permanece. O 6 dominante não é afeto sem forma, é Vênus que arquiteta. O 4 não é rigidez, é a base que sustenta o que o 6 quer tecer. O kármico 14 é a lição viva dentro deste desenho: disciplina escolhida é o que torna a liberdade real.
+
+---
+
 ## Critério final
 
 A síntese está pronta quando o retrato emerge claro como uma fotografia, com:

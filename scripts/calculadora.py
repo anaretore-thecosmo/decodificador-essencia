@@ -67,15 +67,19 @@ def reduzir(numero, preservar_mestres=True):
 
 
 def detectar_karmicos_no_caminho(data_str):
-    """Detecta números kármicos na soma da data."""
+    """Detecta números kármicos na soma da data, dia e vida passada tântrica."""
     dia, mes, ano = parse_data(data_str)
     digitos = list(str(dia)) + list(str(mes)) + list(str(ano))
     soma = sum(int(d) for d in digitos)
+    ano_str = f"{ano:04d}"
+    vida_passada_bruta = int(ano_str[:2])
     karmicos = []
     if soma in NUMEROS_KARMICOS:
-        karmicos.append(soma)
+        karmicos.append({'numero': soma, 'origem': 'caminho_de_vida_bruto'})
     if dia in NUMEROS_KARMICOS:
-        karmicos.append(dia)
+        karmicos.append({'numero': dia, 'origem': 'dia_nascimento'})
+    if vida_passada_bruta in NUMEROS_KARMICOS:
+        karmicos.append({'numero': vida_passada_bruta, 'origem': 'vida_passada_tantrica'})
     return karmicos
 
 
@@ -347,7 +351,9 @@ def vedico(nome, data_str):
         'pratico': linha_completa([8, 1, 6]),
         'vontade': linha_completa([1, 5, 9]),
         'protecao': linha_completa([4, 5, 6]),
-        'acao': linha_completa([2, 5, 8])
+        'acao': linha_completa([2, 5, 8]),
+        'raiz_materia': linha_completa([4, 3, 8]),
+        'emocao_conexao': linha_completa([2, 7, 6])
     }
 
     return {
@@ -404,13 +410,22 @@ def tantrico(data_str):
     soma_total = sum(int(d) for d in str(dia) + str(mes) + str(ano))
     caminho = reduzir(soma_total, preservar_mestres=False)
 
+    karmicos_tantricos = []
+    if primeiros_dois_ano in NUMEROS_KARMICOS:
+        karmicos_tantricos.append({'numero': primeiros_dois_ano, 'posicao': 'vida_passada_bruta'})
+    if ultimos_dois_ano in NUMEROS_KARMICOS:
+        karmicos_tantricos.append({'numero': ultimos_dois_ano, 'posicao': 'dom_bruto'})
+    if soma_total in NUMEROS_KARMICOS:
+        karmicos_tantricos.append({'numero': soma_total, 'posicao': 'caminho_bruto'})
+
     return {
         'sistema': 'tantrico',
         'alma': {'numero': alma, 'corpo': CORPOS_TANTRICOS.get(alma)},
         'karma': {'numero': karma, 'corpo': CORPOS_TANTRICOS.get(karma)},
         'dom': {'numero': dom, 'corpo': CORPOS_TANTRICOS.get(dom)},
-        'vida_passada': {'numero': vida_passada, 'corpo': CORPOS_TANTRICOS.get(vida_passada)},
-        'caminho': {'numero': caminho, 'corpo': CORPOS_TANTRICOS.get(caminho)}
+        'vida_passada': {'numero': vida_passada, 'corpo': CORPOS_TANTRICOS.get(vida_passada), 'bruto': primeiros_dois_ano},
+        'caminho': {'numero': caminho, 'corpo': CORPOS_TANTRICOS.get(caminho)},
+        'karmicos_tantricos': karmicos_tantricos
     }
 
 
@@ -573,6 +588,64 @@ def detectar_convergencias(resultados):
 
 
 # ============================================================
+# MODO MARCA / EMPRESA
+# ============================================================
+
+def analise_marca(nome, data_str):
+    """Análise para entidades. Omite Tântrico (pessoal) e Mulank védico."""
+    dia, mes, ano = parse_data(data_str)
+    digitos_data = list(str(dia)) + list(str(mes)) + list(str(ano))
+    bhagyank = reduzir(sum(int(d) for d in digitos_data), preservar_mestres=False)
+    nome_limpo = normalizar(nome).replace(' ', '')
+    naam_ank = reduzir(soma_palavra(nome_limpo, TABELA_PITAGORICO), preservar_mestres=False)
+
+    resultados = {
+        'meta': {
+            'nome_original': nome,
+            'nome_normalizado': normalizar(nome),
+            'data_fundacao': data_str,
+            'modo': 'marca',
+            'data_analise': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        },
+        'pitagorico': pitagorico(nome, data_str),
+        'cabalistico': cabalistico(nome),
+        'caldeu': caldeu(nome),
+        'chines': chines(data_str),
+        'cosmico': cosmico(data_str),
+        'vedico_parcial': {
+            'bhagyank': bhagyank,
+            'bhagyank_planeta': PLANETAS_VEDICOS.get(bhagyank),
+            'naam_ank': naam_ank,
+            'naam_ank_planeta': PLANETAS_VEDICOS.get(naam_ank),
+            'nota': 'Mulank e Lo Shu Grid omitidos — não se aplicam a entidades'
+        }
+    }
+
+    ocorrencias = {}
+    def add(n, s, p):
+        if n and isinstance(n, int):
+            ocorrencias.setdefault(n, []).append(f"{s} - {p}")
+
+    p = resultados['pitagorico']
+    add(p['caminho_vida'], 'Pitagórico', 'Caminho de Vida')
+    add(p['expressao'], 'Pitagórico', 'Expressão')
+    add(p['alma'], 'Pitagórico', 'Alma')
+    add(p['personalidade'], 'Pitagórico', 'Personalidade')
+    add(resultados['cabalistico']['destino'], 'Cabalístico', 'Destino')
+    add(resultados['caldeu']['destino'], 'Caldeu', 'Destino')
+    add(bhagyank, 'Védico', 'Bhagyank')
+    add(naam_ank, 'Védico', 'Naam Ank')
+    add(resultados['cosmico']['galactica'], 'Cósmico', 'Galáctica')
+    add(resultados['cosmico']['cristal'], 'Cósmico', 'Cristal')
+
+    resultados['convergencias'] = dict(sorted(
+        {n: ocs for n, ocs in ocorrencias.items() if len(ocs) >= 3}.items(),
+        key=lambda x: -len(x[1])
+    ))
+    return resultados
+
+
+# ============================================================
 # ORQUESTRAÇÃO
 # ============================================================
 
@@ -659,6 +732,11 @@ def main():
             print("Sinastria exige: nome1 data1 nome2 data2", file=sys.stderr)
             sys.exit(1)
         resultado = sinastria(parsed.args[0], parsed.args[1], parsed.args[2], parsed.args[3])
+    elif parsed.marca:
+        if len(parsed.args) != 2:
+            print("Modo marca exige: nome_marca data_fundacao", file=sys.stderr)
+            sys.exit(1)
+        resultado = analise_marca(parsed.args[0], parsed.args[1])
     elif parsed.ano_pessoal:
         if len(parsed.args) != 2:
             print("Ano pessoal exige: nome data", file=sys.stderr)

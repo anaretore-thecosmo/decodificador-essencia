@@ -364,8 +364,7 @@ Se algum item falhar, refaça a seção antes de entregar.
 
 ## Notas operacionais
 
-- A skill assume Python 3.10+ disponível no ambiente
-- A pasta `~/leituras/` é criada automaticamente se não existir
-- A skill não envia dados para nenhum serviço externo. Cálculo e interpretação são locais
-- A skill pode ser invocada em qualquer cliente Claude Code, mas otimiza para uso na VPS do ecossistema THE COSMO
-- Quando integrada ao Plano A workflow, opera com a regra de não expor metodologia interna
+- **Python**: a skill requer Python 3.10+. Na VPS (72.60.55.50) o Python3 está disponível e é o ambiente primário. Em Windows local, use `python` em vez de `python3`, ou execute via SSH: `ssh root@72.60.55.50 python3 ...`. Se Python não estiver disponível, execute os cálculos manualmente usando as tabelas dos references e prossiga para a Fase 3 sem JSON estruturado.
+- **Pasta de leituras**: `~/leituras/` resolve para `/root/leituras/` na VPS. Em ambiente local Windows, use caminho absoluto explícito (ex: `C:\Users\Ana\leituras\`). A pasta é criada automaticamente na primeira execução.
+- A skill não envia dados para nenhum serviço externo. Cálculo e interpretação são locais.
+- Quando integrada ao Plano A workflow, opera com a regra de não expor metodologia interna.

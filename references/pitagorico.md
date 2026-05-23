@@ -138,6 +138,22 @@ Quatro pináculos marcam fases da vida. Cada um traz um número (a energia da fa
 ### Como ler
 O pináculo é a energia disponível, o desafio é o ponto de tensão a ser integrado naquela fase. Lê-se sempre os dois juntos.
 
+### Números como pináculo — leitura específica
+
+O número em pináculo é energia de fase, não traço permanente.
+
+**Pináculo 1**: fase de individuação. Período para construir algo autoral, liderar pela primeira vez, abrir o próprio caminho. Risco: isolamento.
+**Pináculo 2**: fase de cooperação. Período para construir a dois, mediar, desenvolver sensibilidade. Risco: diluição.
+**Pináculo 3**: fase de expressão criativa. Período para comunicar, criar, aparecer. Risco: dispersão sem profundidade.
+**Pináculo 4**: fase de construção paciente. Trabalho sólido, método, resultados de longo prazo. Risco: rigidez.
+**Pináculo 5**: fase de movimento e mudança. Transformações, novas áreas, liberdade de movimento. Risco: instabilidade.
+**Pináculo 6**: fase de tessitura e responsabilidade. Cuidado, compromisso, beleza construída. Risco: auto-sacrifício.
+**Pináculo 7**: fase de aprofundamento interior. Estudo, recolhimento, desenvolvimento espiritual. Risco: isolamento improdutivo.
+**Pináculo 8**: fase de manifestação e autoridade. Colheita de esforços, reconhecimento, liderança. Risco: poder sem ética.
+**Pináculo 9**: fase de finalização de ciclos. Doação, conclusão de obras, visão ampla. Risco: dificuldade em soltar.
+**Pináculo 11**: fase de canal. Alta sensibilidade, missão de transmissão. Exige ancoragem — sem ela, é cacofonia.
+**Pináculo 22**: fase de construção em larga escala. Materializar visões grandes, deixar obra coletiva. Exige humildade e método.
+
 ## Ciclos de Vida
 
 Três grandes ciclos, baseados em mês (juventude, 0-28), dia (produtividade, 28-56) e ano (maturidade, 56+). Cada ciclo tem sua vibração predominante.

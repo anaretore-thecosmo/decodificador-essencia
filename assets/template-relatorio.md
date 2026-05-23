@@ -187,8 +187,8 @@ S=1  T=2  U=3  V=4  W=5  X=6  Y=7  Z=8
 **Yin/Yang:** [yin ou yang]
 **Combinação:** [animal] de [elemento] ([yin/yang])
 
-**Trígono:** [trígono ao qual pertence]
-**Signo oposto:** [signo de tensão natural]
+**Trígono:** [derivar de references/chines.md — ex: Cavalo pertence ao Trígono da Independência: Tigre, Cavalo, Cão]
+**Signo oposto:** [derivar de references/chines.md — ex: Cavalo opõe Rato]
 
 ### Interpretação
 
